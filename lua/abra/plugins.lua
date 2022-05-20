@@ -74,6 +74,16 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
+    
+      -- Terminal
+  use {
+    's1n7ax/nvim-terminal',
+    config = function()
+        vim.o.hidden = true
+        require('nvim-terminal').setup()
+    end,
+  }
+    
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
