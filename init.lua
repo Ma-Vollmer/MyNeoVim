@@ -3,6 +3,7 @@ require "abra.keymaps"
 require "abra.plugins"
 require "abra.cmp"
 require "abra.lsp.init"
+require "abra.colorscheme"
 
 vim.cmd "source $HOME/.config/nvim/themes/airline.vim"
 vim.o.guifont = "JetBrainsMono Nerd Font:5"
@@ -61,4 +62,3 @@ require('lualine').setup {
 
 
 
-require "abra.colorscheme"
