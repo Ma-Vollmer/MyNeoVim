@@ -44,18 +44,28 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-
-  use "vim-airline/vim-airline"
-  use "preservim/nerdtree"
-  use "appelgriebsch/surround.nvim"
-  use "vim-airline/vim-airline-themes"
+use {
+    'kyazdani42/nvim-tree.lua',
+  requires = {
+    'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  },
+  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+}
+require("nvim-tree").setup()
+--  use "preservim/nerdtree"
+--  use "appelgriebsch/surround.nvim"
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
   use "nvim-telescope/telescope.nvim"
   use "jiangmiao/auto-pairs"
   use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
-  use "lunarvim/colorschemes"
+  use 'navarasu/onedark.nvim'use "lunarvim/colorschemes"
+  use 'tanvirtin/monokai.nvim'
   use "BurntSushi/ripgrep"
   use "morhetz/gruvbox"
-
+    use { "catppuccin/nvim", as = "catppuccin" }
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -68,6 +78,8 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  use "mhinz/vim-startify"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP

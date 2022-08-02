@@ -36,7 +36,7 @@ keymap("n", "<A-l>", ":vertical resize +2<CR>", opts)
 
 
 -- Telescope and NERDTree
-keymap("n", "<leader>e", ":NERDTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<C-f>", ":Telescope find_files<cr>", opts)
 
 
